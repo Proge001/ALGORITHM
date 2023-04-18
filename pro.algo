@@ -1,0 +1,39 @@
+ALGORITHM algorithm_name
+VAR
+    sentence:STRING
+    SLenegth,Nbwords,Nbvowels,i,j,k:INTEGER
+BEGIN
+    Read(sentence)
+
+//calculate the length of the sentence
+
+WHILE (sentence[i] <> ".") DO
+    SLenegth:= SLenegth+1;
+    i=i+1
+END_WHILE
+END
+
+//CALCULATE THE NUMBER OF WORDS IN THE SENTENCE BY CALCULATING THE NUMBER OF SPACE
+
+WHILE (j<SLenegth) DO
+    IF (sentence[j]=" ") THEN
+        Nbwords:=Nbwords+1
+        j:j+1
+    END_IF
+END_WHILE
+
+//calculate the number which are "a", "e", "i", "o", "u"
+
+WHILE (k<SLenegth) DO
+    IF(sentence[k]="a" OR sentence[k]="e" or sentence[k]="i" OR sentence[k]="o" 
+    OR sentence[k]="u") THEN
+
+    Nbvowels:=Nbvowels+1
+    k:k+1;
+    END_IF
+END_WHILE
+
+write(SLenegth, Nbwords, Nbvowels);
+
+END
+
